@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "Removes the spectator flight speed cap when scrolling.",
+  "authors": ["Sxilverr"],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/uncapped-spectator-speed",
+    "issues": "https://github.com/SxilverKat/Uncapped-Spectator-Speed/issues"
+  },
+  "license": "CC0-1.0",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.sxilverr.uncappedspectatorspeed.fabric.UncappedSpectatorSpeedFabric"],
+    "modmenu": ["com.sxilverr.uncappedspectatorspeed.fabric.ModMenuIntegration"]
+  },
+  "mixins": ["uncappedspectatorspeed.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": "${minecraft}"
+  },
+  "suggests": {
+    "modmenu": "*",
+    "cloth-config": "*"
+  }
+}
