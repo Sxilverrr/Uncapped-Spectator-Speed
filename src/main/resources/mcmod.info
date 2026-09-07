@@ -1,0 +1,13 @@
+[
+{
+  "modid": "uncappedspectatorspeed",
+  "name": "Uncapped Spectator Speed",
+  "description": "Removes the spectator flight speed cap when scrolling.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://www.curseforge.com/minecraft/mc-mods/uncapped-spectator-speed",
+  "authorList": ["Sxilverr"],
+  "credits": "",
+  "logoFile": "icon.png"
+}
+]

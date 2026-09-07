@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '2.3-SNAPSHOT', changing: true
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'idea'
+
+version = "${mod_version}-${mc_version}"
+group = mod_group
+archivesBaseName = mod_id
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+compileJava.options.encoding = 'UTF-8'
+
+minecraft {
+    version = "${mc_version}-${forge_version}"
+    runDir = 'run'
+    mappings = mappings_version
+    makeObfSourceJar = false
+    replace '@MOD_VERSION@', project.mod_version
+    replaceIn 'UncappedSpectatorSpeed.java'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'mcversion', project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.mod_version, 'mcversion': mc_version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+                'FMLCorePluginContainsFMLMod': 'false',
+                'Specification-Title'        : mod_name,
+                'Specification-Vendor'       : 'Sxilverr',
+                'Specification-Version'      : '1',
+                'Implementation-Title'       : mod_name,
+                'Implementation-Version'     : project.mod_version,
+                'Implementation-Vendor'      : 'Sxilverr'
+        ])
+    }
+}
