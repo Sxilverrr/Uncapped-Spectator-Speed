@@ -22,7 +22,6 @@ dependencies {
 }
 
 java {
-    withSourcesJar()
     val java = when {
         stonecutter.eval(minecraft, ">=1.20.5") -> JavaVersion.VERSION_21
         stonecutter.eval(minecraft, ">=1.17") -> JavaVersion.VERSION_17
@@ -30,9 +29,4 @@ java {
     }
     targetCompatibility = java
     sourceCompatibility = java
-}
-
-tasks.build {
-    group = "versioned"
-    description = "Must run through 'chiseledBuild'"
 }

@@ -1,13 +1,21 @@
 package com.sxilverr.uncappedspectatorspeed.forge;
 
-import com.sxilverr.uncappedspectatorspeed.UncappedSpectatorSpeed;
+import com.sxilverr.uncappedspectatorspeed.ModConfig;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(UncappedSpectatorSpeed.MODID)
-public class UncappedSpectatorSpeedForge
+@Mod(ModConfig.MODID)
+public final class UncappedSpectatorSpeedForge
 {
-    public UncappedSpectatorSpeedForge()
+    //? if >=1.19 {
+    public UncappedSpectatorSpeedForge(FMLJavaModLoadingContext context)
     {
-        ForgeConfig.register();
+        ForgeConfig.register(context);
     }
+    //?} else {
+    /*public UncappedSpectatorSpeedForge()
+    {
+        ForgeConfig.register(net.minecraftforge.fml.ModLoadingContext.get());
+    }*/
+    //?}
 }

@@ -1,12 +1,12 @@
 package com.sxilverr.uncappedspectatorspeed.neoforge;
 
+import com.sxilverr.uncappedspectatorspeed.ModConfig;
 import com.sxilverr.uncappedspectatorspeed.SpectatorGuard;
-import com.sxilverr.uncappedspectatorspeed.UncappedSpectatorSpeed;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
-@EventBusSubscriber(modid = UncappedSpectatorSpeed.MODID)
+@EventBusSubscriber(modid = ModConfig.MODID)
 public final class NeoForgeCommonEvents
 {
     @SubscribeEvent

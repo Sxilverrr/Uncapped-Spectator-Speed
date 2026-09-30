@@ -19,7 +19,6 @@ public final class NeoForgeConfig
 
     static
     {
-        CLIENT_BUILDER.push("Client");
         CAP_SPECTATOR_SPEED = CLIENT_BUILDER
                 .comment("Cap spectator speed.")
                 .define("cap_spectator_speed", ModConfig.DEFAULT_CAP_SPECTATOR_SPEED);
@@ -29,13 +28,10 @@ public final class NeoForgeConfig
         SCROLL_SPEED_MULTIPLIER = CLIENT_BUILDER
                 .comment("Speed gained per scroll tick. Higher = faster.")
                 .defineInRange("scroll_speed_multiplier", ModConfig.DEFAULT_SCROLL_SPEED_MULTIPLIER, 0.0D, Double.MAX_VALUE);
-        CLIENT_BUILDER.pop();
 
-        COMMON_BUILDER.push("Common");
         PREVENT_SPECTATOR_DEATH = COMMON_BUILDER
                 .comment("Prevent spectators from dying in the void.")
                 .define("prevent_spectator_death", ModConfig.DEFAULT_PREVENT_SPECTATOR_DEATH);
-        COMMON_BUILDER.pop();
 
         CLIENT_SPEC = CLIENT_BUILDER.build();
         COMMON_SPEC = COMMON_BUILDER.build();

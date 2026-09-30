@@ -1,0 +1,6 @@
+{
+  "uncappedspectatorspeed.configuration.cap_spectator_speed": "Cap spectator speed",
+  "uncappedspectatorspeed.configuration.maximum_spectator_speed": "Maximum spectator speed",
+  "uncappedspectatorspeed.configuration.scroll_speed_multiplier": "Scroll speed multiplier",
+  "uncappedspectatorspeed.configuration.prevent_spectator_death": "Prevent spectator death"
+}

@@ -3,7 +3,6 @@ package com.sxilverr.uncappedspectatorspeed.fabric;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.sxilverr.uncappedspectatorspeed.ModConfig;
-import com.sxilverr.uncappedspectatorspeed.UncappedSpectatorSpeed;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.IOException;
@@ -72,7 +71,7 @@ public final class FabricConfig
 
     private static Path path()
     {
-        return FabricLoader.getInstance().getConfigDir().resolve(UncappedSpectatorSpeed.MODID + ".json");
+        return FabricLoader.getInstance().getConfigDir().resolve(ModConfig.MODID + ".json");
     }
 
     private FabricConfig()

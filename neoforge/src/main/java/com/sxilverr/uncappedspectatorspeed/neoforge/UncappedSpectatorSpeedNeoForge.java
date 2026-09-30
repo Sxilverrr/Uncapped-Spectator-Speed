@@ -1,14 +1,13 @@
 package com.sxilverr.uncappedspectatorspeed.neoforge;
 
-import com.sxilverr.uncappedspectatorspeed.UncappedSpectatorSpeed;
-import net.neoforged.bus.api.IEventBus;
+import com.sxilverr.uncappedspectatorspeed.ModConfig;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 
-@Mod(UncappedSpectatorSpeed.MODID)
+@Mod(ModConfig.MODID)
 public final class UncappedSpectatorSpeedNeoForge
 {
-    public UncappedSpectatorSpeedNeoForge(IEventBus modBus, ModContainer container)
+    public UncappedSpectatorSpeedNeoForge(ModContainer container)
     {
         NeoForgeConfig.register(container);
     }

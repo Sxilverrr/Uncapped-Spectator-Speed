@@ -1,18 +1,14 @@
-@file:Suppress("UnstableApiUsage")
-
 plugins {
     id("dev.architectury.loom")
     id("architectury-plugin")
-    id("com.github.johnrengelman.shadow")
+    id("com.gradleup.shadow")
 }
 
 val loader = prop("loom.platform")!!
 val minecraft: String = stonecutter.current.version
-val common: Project = requireNotNull(stonecutter.node.sibling("")?.project) {
-    "No common project for $project"
-}
+val common: Project = stonecutter.node.sibling("")!!.project
 
-version = "$minecraft-${mod.version}-$loader"
+version = "$loader-${mod.version}-$minecraft"
 base {
     archivesName.set(mod.id)
 }
@@ -59,7 +55,6 @@ loom {
 }
 
 java {
-    withSourcesJar()
     val java = when {
         stonecutter.eval(minecraft, ">=1.20.5") -> JavaVersion.VERSION_21
         stonecutter.eval(minecraft, ">=1.17") -> JavaVersion.VERSION_17
@@ -96,15 +91,8 @@ tasks.processResources {
     )
 }
 
-tasks.build {
-    group = "versioned"
-    description = "Must run through 'chiseledBuild'"
-}
-
 tasks.register<Copy>("buildAndCollect") {
-    group = "versioned"
-    description = "Must run through 'chiseledBuild'"
-    from(tasks.remapJar.get().archiveFile, tasks.remapSourcesJar.get().archiveFile)
+    from(tasks.remapJar.get().archiveFile)
     into(rootProject.layout.buildDirectory.file("libs/${mod.version}/$loader"))
     dependsOn("build")
 }

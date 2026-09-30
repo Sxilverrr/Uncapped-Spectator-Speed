@@ -1,13 +1,13 @@
 package com.sxilverr.uncappedspectatorspeed.neoforge;
 
+import com.sxilverr.uncappedspectatorspeed.ModConfig;
 import com.sxilverr.uncappedspectatorspeed.SpectatorSpeed;
-import com.sxilverr.uncappedspectatorspeed.UncappedSpectatorSpeed;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.InputEvent;
 
-@EventBusSubscriber(modid = UncappedSpectatorSpeed.MODID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = ModConfig.MODID, value = Dist.CLIENT)
 public final class NeoForgeClientEvents
 {
     @SubscribeEvent

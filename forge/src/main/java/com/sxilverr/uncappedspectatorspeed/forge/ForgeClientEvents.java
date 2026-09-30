@@ -1,13 +1,13 @@
 package com.sxilverr.uncappedspectatorspeed.forge;
 
+import com.sxilverr.uncappedspectatorspeed.ModConfig;
 import com.sxilverr.uncappedspectatorspeed.SpectatorSpeed;
-import com.sxilverr.uncappedspectatorspeed.UncappedSpectatorSpeed;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = UncappedSpectatorSpeed.MODID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = ModConfig.MODID, value = Dist.CLIENT)
 public final class ForgeClientEvents
 {
     @SubscribeEvent

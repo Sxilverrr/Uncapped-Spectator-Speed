@@ -7,11 +7,10 @@
   "authors": ["Sxilverr"],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/uncapped-spectator-speed",
-    "issues": "https://github.com/SxilverKat/Uncapped-Spectator-Speed/issues"
+    "issues": "https://github.com/Sxilverrr/Uncapped-Spectator-Speed/issues"
   },
   "license": "CC0-1.0",
   "icon": "icon.png",
-  "environment": "*",
   "entrypoints": {
     "main": ["com.sxilverr.uncappedspectatorspeed.fabric.UncappedSpectatorSpeedFabric"],
     "modmenu": ["com.sxilverr.uncappedspectatorspeed.fabric.ModMenuIntegration"]

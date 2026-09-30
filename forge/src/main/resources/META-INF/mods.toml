@@ -1,7 +1,7 @@
 modLoader = "javafml"
-loaderVersion = "${forge_range}"
+loaderVersion = "*"
 license = "CC0-1.0"
-issueTrackerURL = "https://github.com/SxilverKat/Uncapped-Spectator-Speed/issues"
+issueTrackerURL = "https://github.com/Sxilverrr/Uncapped-Spectator-Speed/issues"
 
 [[mods]]
 modId = "${id}"

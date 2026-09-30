@@ -2,6 +2,8 @@ package com.sxilverr.uncappedspectatorspeed;
 
 public final class ModConfig
 {
+    public static final String MODID = "uncappedspectatorspeed";
+
     public static final boolean DEFAULT_CAP_SPECTATOR_SPEED = false;
     public static final double DEFAULT_MAXIMUM_SPECTATOR_SPEED = 0.2D;
     public static final double DEFAULT_SCROLL_SPEED_MULTIPLIER = 1.0D;

@@ -41,10 +41,10 @@ public final class ForgeConfig
         COMMON_SPEC = COMMON_BUILDER.build();
     }
 
-    static void register()
+    static void register(ModLoadingContext context)
     {
-        ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.CLIENT, CLIENT_SPEC);
-        ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, COMMON_SPEC);
+        context.registerConfig(net.minecraftforge.fml.config.ModConfig.Type.CLIENT, CLIENT_SPEC);
+        context.registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, COMMON_SPEC);
     }
 
     static void syncClient()

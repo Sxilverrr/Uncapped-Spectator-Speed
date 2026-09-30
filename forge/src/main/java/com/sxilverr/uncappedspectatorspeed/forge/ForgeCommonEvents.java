@@ -1,12 +1,12 @@
 package com.sxilverr.uncappedspectatorspeed.forge;
 
+import com.sxilverr.uncappedspectatorspeed.ModConfig;
 import com.sxilverr.uncappedspectatorspeed.SpectatorGuard;
-import com.sxilverr.uncappedspectatorspeed.UncappedSpectatorSpeed;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = UncappedSpectatorSpeed.MODID)
+@Mod.EventBusSubscriber(modid = ModConfig.MODID)
 public final class ForgeCommonEvents
 {
     @SubscribeEvent
