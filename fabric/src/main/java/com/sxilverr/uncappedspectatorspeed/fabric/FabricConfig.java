@@ -2,8 +2,11 @@ package com.sxilverr.uncappedspectatorspeed.fabric;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
 import com.sxilverr.uncappedspectatorspeed.ModConfig;
 import net.fabricmc.loader.api.FabricLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -21,6 +24,7 @@ public final class FabricConfig
         public boolean prevent_spectator_death = ModConfig.DEFAULT_PREVENT_SPECTATOR_DEATH;
     }
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ModConfig.MODID);
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static Data data = new Data();
 
@@ -42,8 +46,10 @@ public final class FabricConfig
                     data = loaded;
                 }
             }
-            catch (IOException ignored)
+            catch (IOException | JsonParseException e)
             {
+                LOGGER.error("Could not read {}, using default settings: {}", path, e.getMessage());
+                return;
             }
         }
         persist();
